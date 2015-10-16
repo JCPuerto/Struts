@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+ 
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+ 
+<struts-config>
+	<form-beans>
+		<form-bean name="LoginForm" type="com.jcpuerto.form.LoginForm" />
+    </form-beans>
+	<action-mappings>
+		<action path="/login" name="LoginForm" validate="true" input="/index.jsp" type="com.jcpuerto.action.LoginAction">
+			<forward name="success" path="/welcome.jsp" />
+			<forward name="failure" path="/index.jsp" />
+		</action>
+	</action-mappings>
+	<!-- This is an alternative to the bundle set in JSTLEnvironmentSetup.jspf -->
+	<!-- <message-resources parameter="com.jcpuerto.messages.test" /> -->
+</struts-config>

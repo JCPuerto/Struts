@@ -12,9 +12,20 @@
 		<c:set var="salary" scope="session" value="${2000*2}"/>
 		
 		<c:if test="${salary > 2000}">
-   			<p>My salary is: <c:out value="${salary}"/><p>
+   			<p>My salary is: ${salary}<p>
 		</c:if>
+
+		<br />
+		<br />
+		<br />
 		
-		<fmt:message key="SAQ_MINIACCOUNT_EMAIL" bundle="${storeText}" />
+		<h1>Test</h1>
+		<br>
+		http://www.java2s.com/Code/Java/J2EE/StrutsFrameworkASampleStrutsApplication.htm
+		<hr width="100%">
+
+		&#149; Add an Employee<br>
+		&#149; <h:link forward="search">Search for Employees</h:link>
+		<br>
 	</body>
 </html>

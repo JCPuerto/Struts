@@ -3,15 +3,28 @@
 <!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
  
 <struts-config>
+	
 	<form-beans>
-		<form-bean name="LoginForm" type="com.jcpuerto.form.LoginForm" />
+		<form-bean	name="SearchForm"
+					type="com.jcpuerto.form.SearchForm" />
     </form-beans>
+	
+	<global-forwards>
+    	<forward	name="search"
+    				path="/search.jsp"/>
+	</global-forwards>
+	
 	<action-mappings>
-		<action path="/login" name="LoginForm" validate="true" input="/index.jsp" type="com.jcpuerto.action.LoginAction">
-			<forward name="success" path="/welcome.jsp" />
-			<forward name="failure" path="/index.jsp" />
+    	<action	path="/search"
+    			type="com.jcpuerto.action.SearchAction"
+    			name="SearchForm"
+    			scope="request"
+    			validate="true"
+    			input="/search.jsp">
 		</action>
-	</action-mappings>
-	<!-- This is an alternative to the bundle set in JSTLEnvironmentSetup.jspf -->
-	<!-- <message-resources parameter="com.jcpuerto.messages.test" /> -->
+  </action-mappings>
+	
+	<!-- For most texts there is a bundle in JSTLEnvironmentSetup.jspf -->
+	<!-- But I couldn't use a bundle to show messages -->
+	<message-resources parameter="com.jcpuerto.messages.storeErrorMessages" />
 </struts-config>
